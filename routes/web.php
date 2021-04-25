@@ -45,5 +45,5 @@ Route::get('/dashboard/view-books', [booksController::class, 'index'])->name('vi
 //Route::put('/dashboard/book/{books}', [booksController::class, 'update'])->name('editBook');
 
 
-//Route::put('/dashboard/contact/{contacts}', [contactsController::class, 'update'])->name('editContact');
+Route::put('/dashboard/contact/{contacts}', [contactsController::class, 'update'])->name('editContact');
 //Route::delete('/dashboard/contact/{contacts}', [contactsController::class, 'destroy'])->name('deleteContact');
