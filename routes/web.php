@@ -4,12 +4,13 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\homeController;
 use App\Http\Controllers\aboutController;
-
 use App\Http\Controllers\contactUsController;
+
 use App\Http\Controllers\auth\loginController;
-use App\Http\Controllers\admin\booksController;
 use App\Http\Controllers\auth\logoutController;
 use App\Http\Controllers\auth\registerController;
+
+use App\Http\Controllers\admin\booksController;
 use App\Http\Controllers\admin\dashboardController;
 /*
 |--------------------------------------------------------------------------
@@ -42,8 +43,5 @@ Route::get('/dashboard/book', [booksController::class, 'create'])->name('addBook
 Route::post('/dashboard/book', [booksController::class, 'store']);
 
 Route::get('/dashboard/view-books', [booksController::class, 'index'])->name('viewBooks');
-//Route::put('/dashboard/book/{books}', [booksController::class, 'update'])->name('editBook');
-
-
-//Route::put('/dashboard/contact/{contacts}', [contactsController::class, 'update'])->name('editContact');
-//Route::delete('/dashboard/contact/{contacts}', [contactsController::class, 'destroy'])->name('deleteContact');
+Route::put('/dashboard/book/{books}', [booksController::class, 'update'])->name('editBook');
+Route::delete('/dashboard/book/{books}', [booksController::class, 'destroy'])->name('deleteBook');

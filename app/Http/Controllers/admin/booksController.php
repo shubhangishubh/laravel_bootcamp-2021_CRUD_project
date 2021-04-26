@@ -52,18 +52,6 @@ class booksController extends Controller
             'total_issued'   => 'nullable|max:250'
         ]);
 
-        // $book = new book;
-
-        // $book->name = $request->full_name;
-        // $book->phone = $request->phone;
-
-        // if(!empty($request->email)) $contact->email = $request->email;
-        // if(!empty($request->sec_phone)) $contact->sec_phone = $request->sec_phone;
-        // if(!empty($request->country)) $contact->country = $request->country;
-        // if(!empty($request->company)) $contact->company = $request->company;
-
-        // $contact->save();
-
         books::create([
             'name'          => $request->name,
             'publisher'         => $request->publisher,
@@ -111,7 +99,7 @@ class booksController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    /*  public function update(Request $request, $book_id)
+    public function update(Request $request, $book_id)
     {
         $this->validate($request, [
             'name' => 'required|max:250',
@@ -138,7 +126,7 @@ class booksController extends Controller
         return view('admin-pages.viewBooks', [
             'books' => $books
         ]);
-    }*/
+    }
 
     /**
      * Remove the specified resource from storage.
@@ -146,8 +134,15 @@ class booksController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($book_id)
     {
-        //
+        $book = books::where('id', '=', $book_id)->take(1);
+        $book->delete();
+        // List of books
+        $books = books::all();
+
+        return view('admin-pages.viewBooks', [
+            'books' => $books
+        ]);
     }
 }
