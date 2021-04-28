@@ -8,12 +8,13 @@ use App\Http\Controllers\Controller;
 
 
 
-class booksController extends Controller
+
+class booksApiController extends Controller
 {
 
     public function __construct()
     {
-        $this->middleware(['auth']);
+        $this->middleware(['auth:api']);
     }
     /**
      * Display a listing of the resource.
@@ -21,16 +22,6 @@ class booksController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //List of books
-        $books = books::all();
-        return view('admin-pages.viewBooks', [
-            'books' => $books
-        ]);
-    }
-
-
-    public function getAllBooks()
     {
         // List of books
         $books = books::all();
@@ -41,6 +32,7 @@ class booksController extends Controller
             "error"     => array()
         ]);
     }
+
     /**
      * Show the form for creating a new resource.
      *

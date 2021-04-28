@@ -11,50 +11,50 @@
                     <h2 class="display-4  mb-2">Contact Us</h2>
                     {{-- Contact Us--}}
                     <form method="post" action="{{route('contactUs')}}">
-                      @csrf
+                        @csrf
 
                         <div class="form-group py-2">
                             <label for="fullName">Full Name</label>
-                            <input type="text" class="form-control" id="name" name="name"
-                              placeholder="Full Name" value="{{old('name')}}">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Full Name"
+                                value="{{old('name')}}">
 
-                                @error('name')
-                                <span class="text-danger">{{ $message }}</span>
-                                @enderror
+                            @error('name')
+                            <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                         <div class="form-group py-2">
-                          <label for="Email">Email address</label>
-                          <input type="email" class="form-control" id="email" name="email"
-                               placeholder="Enter email" value="{{old('email')}}">
-                               @error('email')
-                               <span class="text-danger">{{ $message }}</span>
-                               @enderror
+                            <label for="Email">Email address</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter email"
+                                value="{{old('email')}}">
+                            @error('email')
+                            <span class="text-danger">{{ $message }}</span>
+                            @enderror
 
-                      </div>
-                      <div class="form-group py-2">
-                        <label for="mobile">Mobile No.</label>
-                        <input type="text" class="form-control" id="phone" name="phone"
-                             placeholder="Enter mobile no." value="{{old('phone')}}">
-                             @error('phone')
-                                <span class="text-danger">{{ $message }}</span>
-                                @enderror
-                    </div>
+                        </div>
+                        <div class="form-group py-2">
+                            <label for="mobile">Mobile No.</label>
+                            <input type="text" class="form-control" id="phone" name="phone"
+                                placeholder="Enter mobile no." value="{{old('phone')}}">
+                            @error('phone')
+                            <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                        </div>
                         <div class="form-group py-2">
                             <label for="Country">Country</label>
                             <input type="text" class="form-control" id="country" name="country"
-                                placeholder="Country Name"  value="{{old('country')}}">
-                                @error('country')
-                                <span class="text-danger">{{ $message }}</span>
-                                @enderror
+                                placeholder="Country Name" value="{{old('country')}}">
+                            @error('country')
+                            <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                         <div class="form-group py-2">
-                          <label for="confirmPassword">Company</label>
-                          <input type="text" class="form-control" id="company" name="company"
-                              placeholder="Company Detail"  value="{{old('company')}}">
-                              @error('company')
-                              <span class="text-danger">{{ $message }}</span>
-                              @enderror
-                      </div>
+                            <label for="confirmPassword">Company</label>
+                            <input type="text" class="form-control" id="company" name="company"
+                                placeholder="Company Detail" value="{{old('company')}}">
+                            @error('company')
+                            <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                        </div>
 
                         <button type="submit" class="btn btn-primary">Submit</button>
 

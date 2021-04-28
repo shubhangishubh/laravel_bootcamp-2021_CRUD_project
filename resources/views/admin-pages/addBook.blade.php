@@ -6,7 +6,7 @@
 
     <div class="add-book-form">
         {{-- Add Book List --}}
-        <form method="post" action="{{route('addBook')}}">
+        <form method="post" action="{{route('addBook')}}" enctype="multipart/form-data">
             @csrf
 
             <div class="form-group mb-3">
@@ -14,16 +14,20 @@
                 <input type="text" name="name" class="form-control" id="name" placeholder="Enter book Name">
 
                 @error('name')
-                    <span class="text-danger">{{ $message }}</span>
+                <span class="text-danger">{{ $message }}</span>
                 @enderror
             </div>
-
+            <div class="mb-3">
+                <label for="user_avatar" class="form-label">User Image (Avatar)</label>
+                <input class="form-control" type="file" id="user_avatar" name="user_avatar">
+            </div>
             <div class="form-group mb-3">
                 <label for="publisher">Publisher</label>
-                <input type="text" name="publisher" class="form-control" id="publisher" placeholder="Enter Publisher Name">
+                <input type="text" name="publisher" class="form-control" id="publisher"
+                    placeholder="Enter Publisher Name">
 
                 @error('publisher')
-                    <span class="text-danger">{{ $message }}</span>
+                <span class="text-danger">{{ $message }}</span>
                 @enderror
             </div>
 
@@ -32,16 +36,16 @@
                 <input type="text" name="series" class="form-control" id="series" placeholder="Enter Series No. ">
 
                 @error('series')
-                    <span class="text-danger">{{ $message }}</span>
+                <span class="text-danger">{{ $message }}</span>
                 @enderror
             </div>
 
             <div class="form-group mb-3">
                 <label for="stock">Stock</label>
-                <input type="number" name="stock" class="form-control" id="stock" placeholder="Enter Stock No.">
+                <input type="text" name="stock" class="form-control" id="stock" placeholder="Enter Stock No.">
 
                 @error('stock')
-                    <span class="text-danger">{{ $message }}</span>
+                <span class="text-danger">{{ $message }}</span>
                 @enderror
             </div>
 
@@ -50,16 +54,17 @@
                 <input type="text" name="price" class="form-control" id="price" placeholder="Enter Price Detail">
 
                 @error('price')
-                    <span class="text-danger">{{ $message }}</span>
+                <span class="text-danger">{{ $message }}</span>
                 @enderror
             </div>
 
             <div class="form-group mb-3">
                 <label for="total_issued">Total Issued</label>
-                <input type="text" name="total_issued" class="form-control" id="total_issued" placeholder="Total Issued Book">
+                <input type="text" name="total_issued" class="form-control" id="total_issued"
+                    placeholder="Total Issued Book">
 
                 @error('total_issued')
-                    <span class="text-danger">{{ $message }}</span>
+                <span class="text-danger">{{ $message }}</span>
                 @enderror
             </div>
 

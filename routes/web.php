@@ -24,7 +24,7 @@ use App\Http\Controllers\admin\dashboardController;
 */
 
 Route::get('/', [homeController::class, 'index'])->name('home');
-Route::get('/about', [aboutController::class, 'index']);
+Route::get('/about', [aboutController::class, 'index'])->name('about');
 
 Route::get('/contactUs', [contactUsController::class, 'index'])->name('contactUs');
 Route::post('/contactUs', [contactUsController::class, 'contactUs']);

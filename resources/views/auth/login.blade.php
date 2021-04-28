@@ -10,25 +10,26 @@
                     <h2 class="display-4 mb-2">Login</h2>
                     {{-- Login Form --}}
                     <form method="post" action="{{route('login')}}">
-                    @csrf
+                        @csrf
                         <div class="form-group py-2">
                             <label for="Email">Email address</label>
-                            <input type="email" class="form-control" id="email" name="email"
-                                 placeholder="Enter email" value="{{old('email')}}">
-                                 @error('email')
-                                 <span class="text-danger">{{ $message }}</span>
-                                 @enderror
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter email"
+                                value="{{old('email')}}">
+                            @error('email')
+                            <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                         <div class="form-group py-2">
                             <label for="Password">Password</label>
                             <input type="password" class="form-control" id="password" name="password"
                                 placeholder="Password" value="{{old('password')}}">
-                                @error('Password')
-                                <span class="text-danger">{{ $message }}</span>
-                                @enderror
+                            @error('Password')
+                            <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                         <div class="form-group form-check py-2">
-                            <input type="checkbox" class="form-check-input" id="rememberme" name="rememberme" value="yes">
+                            <input type="checkbox" class="form-check-input" id="rememberme" name="rememberme"
+                                value="yes">
                             <label class="form-check-label" for="exampleCheck1">Remember me</label>
                         </div>
                         <button type="submit" class="btn btn-primary">Login</button>

@@ -26,8 +26,8 @@ class registerController extends Controller
             'fullName'              =>      'required|string|max:20',
             'email'             =>      'required|email',
             'phone'             =>      'required|numeric|min:10',
-            'password'          =>      'required|alpha_num|min:6',
-            //'confirm_password'  =>      'required|same:password',
+            'password'          =>      'required|alpha_num|min:6|confirmed',
+            'confirm_password'  =>      'required|same:password',
         ]);
 
 

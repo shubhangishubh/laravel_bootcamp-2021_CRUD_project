@@ -10,14 +10,21 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    {{---Importing Navbar ---}}
+    <header>
+          {{---Importing Navbar ---}}
     @include('components/homeNav')
+    </header>
+    <article>
 
 {{---Exporting The Layout---}}
 @yield('application_layout')
+    </article>
 
-    {{---Importing Footer ---}}
+<footer>
+       {{---Importing Footer ---}}
 @include('components/admin/footer')
+</footer>
+
 
 
 

@@ -17,7 +17,7 @@ class contactUsController extends Controller
     // ----------- [ Logic to Register the user] -----------
     public function contactUs(Request $request)
     {
-        dd($request);
+
         // ----------- [ Form validate ] -----------
         $this->validate($request, [
             'name' => 'required|max:250',
@@ -30,7 +30,7 @@ class contactUsController extends Controller
 
         // ----------- [ Insert data into database ] -----------
         contacts::create([
-            'name'          => $request->full_name,
+            'name'          => $request->name,
             'phone'         => $request->phone,
             'email'         => $request->email,
             'country'       => $request->country,
